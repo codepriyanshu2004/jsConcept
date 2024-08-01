@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .h{
+            display: flex;
+            justify-content: center;
+           
+        }
+
+        form{
+            border: 2px solid black;
+        }
+
+      
+      #valid {
+       width: 310px;
+       height: 200px;
+       border-radius: 10px;
+       ;
+      }
+      
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <h1 class="h">Password validation in Javascript</h1>
+    <form onsubmit="return myfun()"      id="valid">
+        <fieldset>
+        <label for="pass"> New Password:</label>
+        <input type="password" id="passwords" placeholder="Enter the Password">
+        <span id="message"  style="color: red;"> </span>
+        <br></br>
+        <label for="pass2">Confirm Password :</label>
+        <input type="password" id="passwordss" placeholder="Confirm the Password">
+        
+        <br></br>
+        <input type="submit"     value="Submit">
+        </fieldset>
+    </form>
+
+    <script>
+      
+        // const a = document.getElementById("valid");
+
+        function myfun(){
+            let a = document.getElementById("passwords").value;
+            let b = document.getElementById("passwordss").value;
+
+            if(a==""){
+                document.getElementById("message").innerText="***Please Fill Password";
+                   
+                return false;
+            }
+
+            if(a.length<6){
+                document.getElementById("message").innerText="Password length must be greater";
+                return false;
+
+            }
+            if(a.length>25){
+                document.getElementById("message").innerText="Password length must be smaller";
+                return false;
+
+            }
+            if(a!=b){
+                document.getElementById("message").innerText="Password are not same"
+                return false;
+            }
+
+        }
+
+        a.addEventListener(SubmitEvent,myfun)
+       
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
